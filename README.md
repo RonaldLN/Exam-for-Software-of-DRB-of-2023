@@ -24,6 +24,19 @@
 
 ### Hints
 
- [数据结构与算法（五）.md](assets\数据结构与算法（五）.md) 
+**==如果按照这部分进行学习，我要求最后的代码不能直接复制up主已经写好的代码==**
 
-根据文件中的
+<a href="assets\数据结构与算法（五）.md" download="数据结构与算法（五）.md">数据结构与算法（五）.md</a>
+
+根据这个文件中的 *归并排序* 部分的介绍
+
+![无标题3](assets/%E6%97%A0%E6%A0%87%E9%A2%983.png)
+
+来学习归并排序，
+
+或者可以根据它*B站上的原视频*来学习 归并排序
+
+[排序：归并排序_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV13W4y127Ey?p=85)
+
+<iframe src="//player.bilibili.com/player.html?aid=941207928&bvid=BV13W4y127Ey&cid=826366023&p=85" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
