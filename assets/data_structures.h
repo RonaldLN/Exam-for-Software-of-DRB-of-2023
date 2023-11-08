@@ -16,8 +16,8 @@ Node *create_my_node(int value);
 void delete_my_node(Node *node);
 
 // Interface for retrieving data from a my_node object
-int get_value();           // Function to get the value of the node
-Node *get_next();          // Function to get the next node
+int get_value(Node *node);   // Function to get the value of the node
+Node *get_next(Node *node);  // Function to get the next node
 
 /**
  * linked_list Class
