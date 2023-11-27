@@ -7,7 +7,7 @@
 
 这是原本的Python考核任务内容
 
->   <a href="assets/第二次考核Python.zip" download="第二次考核Python.zip">第二次考核Python.zip</a>
+>   <a href="https://gitee.com/ronald-luo/exam_for_software_of_drb_of_2023/raw/gh-pages/assets/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%80%83%E6%A0%B8Python.zip" download="第二次考核Python.zip">第二次考核Python.zip</a>
 
 大家如果想查看可以下载查看，想进行尝试的话也可以(想提交给我也行)
 
@@ -15,7 +15,7 @@
 
 ## 任务一（5分）
 
-下载 <a href="assets/lab01.zip" download="lab01.zip">`『lab01.zip』`</a>，将压缩包中的 `lab01` 文件夹解压后，用 :simple-powershell: **PowerShell** 或者 **命令提示符cmd** 打开 `lab01` 文件夹，如图
+下载 <a href="https://gitee.com/ronald-luo/exam_for_software_of_drb_of_2023/raw/gh-pages/assets/lab01.zip" download="lab01.zip">`『lab01.zip』`</a>，将压缩包中的 `lab01` 文件夹解压后，用 :simple-powershell: **PowerShell** 或者 **命令提示符cmd** 打开 `lab01` 文件夹，如图
 
 ![无标题7](assets/无标题7.png)
 
@@ -41,7 +41,7 @@ python ok --local
 
 与**任务一**类似，
 
-测试题文件： <a href="assets/lab02.zip" download="lab02.zip">`『lab02.zip』`</a>
+测试题文件： <a href="https://gitee.com/ronald-luo/exam_for_software_of_drb_of_2023/raw/gh-pages/assets/lab02.zip" download="lab02.zip">`『lab02.zip』`</a>
 
 指示网站：  [Lab 2](assets\Lab 2_ Higher-Order Functions, Lambda Expressions _ CS 61A Fall 2020.mhtml) 
 

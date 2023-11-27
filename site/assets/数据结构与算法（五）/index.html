@@ -1,0 +1,1321 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>数据结构与算法（五） - 舞基23年软件招新第三组考核</title>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/main.35e1ed30.min.css">
+      
+        
+        <link rel="stylesheet" href="../stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+Simplified+Chinese:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Serif Simplified Chinese";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/timeago.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="舞基23年软件招新第三组考核" class="md-header__button md-logo" aria-label="舞基23年软件招新第三组考核" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            舞基23年软件招新第三组考核
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              数据结构与算法（五）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://gitee.com/ronald-luo/exam_for_software_of_drb_of_2023" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296Z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    2023 Software Exam of DRB
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="舞基23年软件招新第三组考核" class="md-nav__button md-logo" aria-label="舞基23年软件招新第三组考核" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    舞基23年软件招新第三组考核
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://gitee.com/ronald-luo/exam_for_software_of_drb_of_2023" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296Z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    2023 Software Exam of DRB
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python相关
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%80%83%E6%A0%B8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++相关
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    基础排序
+  </a>
+  
+    <nav class="md-nav" aria-label="基础排序">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    冒泡排序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    插入排序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    选择排序
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    进阶排序
+  </a>
+  
+    <nav class="md-nav" aria-label="进阶排序">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    快速排序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    希尔排序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    堆排序
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    其他排序方案
+  </a>
+  
+    <nav class="md-nav" aria-label="其他排序方案">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    归并排序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    桶排序和基数排序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    猴子排序
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<p><a class="glightbox" href="https://s2.loli.net/2022/08/21/cTmg9sCrzIuHhBb.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220821224607720" src="https://s2.loli.net/2022/08/21/cTmg9sCrzIuHhBb.png" /></a></p>
+<h1 id="_1">排序算法篇<a class="headerlink" href="#_1" title="Permanent link">⚓︎</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 9035 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 259 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 33 分钟</p>
+</div>
+<p>恭喜各位小伙伴来到最后一部分：<strong>排序算法篇</strong>，数据结构与算法的学习也接近尾声了，坚持就是胜利啊！</p>
+<p>一个数组中的数据原本是凌乱的，但是由于需要，我们需要使其有序排列，要实现对数组进行排序我们之前已经在<strong>C语言程序设计篇</strong>中讲解过冒泡排序和快速排序（选学），而这一部分，我们将继续讲解更多种类型的排序算法。</p>
+<p>在开始之前，我们还是从冒泡排序开始回顾。</p>
+<h2 id="_2">基础排序<a class="headerlink" href="#_2" title="Permanent link">⚓︎</a></h2>
+<h3 id="_3">冒泡排序<a class="headerlink" href="#_3" title="Permanent link">⚓︎</a></h3>
+<p>冒泡排序在C语言程序设计篇已经讲解过了，冒泡排序的核心就是交换，通过不断地进行交换，一点一点将大的元素推向一端，每一轮都会有一个最大的元素排到对应的位置上，最后形成有序。算法演示网站：https://visualgo.net/zh/sorting?slide=2-2</p>
+<p>设数组长度为N，详细过程为：</p>
+<ul>
+<li>共进行N轮排序。</li>
+<li>每一轮排序从数组的最左边开始，两两元素进行比较，如果左边元素大于右边的元素，那么就交换两个元素的位置，否则不变。</li>
+<li>每轮排序都会将剩余元素中最大的一个推到最右边，下次排序就不再考虑这些已经在对应位置的元素。</li>
+</ul>
+<p>比如下面的数组：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/04/BYOvgd3XCspNI9i.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220904212453328" src="https://s2.loli.net/2022/09/04/BYOvgd3XCspNI9i.png" /></a></p>
+<p>那么在第一轮排序时，首先比较前两个元素：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/04/VuiIDqPAr6SMd7H.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220904212608834" src="https://s2.loli.net/2022/09/04/VuiIDqPAr6SMd7H.png" /></a></p>
+<p>我们发现前者更大，那么此时就需要交换，交换之后，继续向后比较后面的两个元素：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/04/CxObP3Tkm4uzU98.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220904212637156" src="https://s2.loli.net/2022/09/04/CxObP3Tkm4uzU98.png" /></a></p>
+<p>我们发现后者更大，不变，继续看后两个：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/04/jy5PtuvHO2BTQc8.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220904212720898" src="https://s2.loli.net/2022/09/04/jy5PtuvHO2BTQc8.png" /></a></p>
+<p>此时前者更大，交换，继续比较后续元素：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/04/64qSbtyMXQ37BDk.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220904212855292" src="https://s2.loli.net/2022/09/04/64qSbtyMXQ37BDk.png" /></a></p>
+<p>还是后者更大，继续交换，然后向后比较：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/04/Rq1xwzupm8C3Q2Z.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220904212942212" src="https://s2.loli.net/2022/09/04/Rq1xwzupm8C3Q2Z.png" /></a></p>
+<p>依然是后者更大，我们发现，只要是最大的元素，它会在每次比较中被一直往后丢：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/04/vx16PpyFkKhVzsJ.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220904213034375" src="https://s2.loli.net/2022/09/04/vx16PpyFkKhVzsJ.png" /></a></p>
+<p>最后，当前数组中最大的元素就被丢到最前面去了，这一轮排序结束，因为最大的已经排到对应的位置上了，所以说第二轮我们只需要考虑其之前的这些元素即可：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/04/qWjTBSe4rlbUxIf.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220904213115671" src="https://s2.loli.net/2022/09/04/qWjTBSe4rlbUxIf.png" /></a></p>
+<p>这样，我们就可以不断将最大的丢到最右边了，最后N轮排序之后，就是一个有序的数组了。</p>
+<p>程序代码如下：</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">bubbleSort</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">){</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">size</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">            </span><span class="c1">//注意需要到N-1的位置就停止，因为要比较j和j+1</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">            </span><span class="c1">//这里减去的i也就是已经排好的不需要考虑了</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w">   </span><span class="c1">//如果后面比前面的小，那么就交换</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">                </span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">                </span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span><span class="p">;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>只不过这种代码还是最原始的冒泡排序，我们可以对其进行优化：</p>
+<ol>
+<li>实际上排序并不需要N轮，而是N-1轮即可，因为最后一轮只有一个元素未排序了，相当于已经排序了，所以说不需要再考虑了。</li>
+<li>如果整轮排序中都没有出现任何的交换，那么说明数组已经是有序的了，不存在前一个比后一个大的情况。</li>
+</ol>
+<p>所以，我们来改进一下：</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">bubbleSort</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">){</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">   </span><span class="c1">//只需要size-1次即可</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="kt">_Bool</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">   </span><span class="c1">//这里使用一个标记，默认为1表示数组是有序的</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">                </span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">    </span><span class="c1">//如果发生交换，说明不是有序的，把标记变成0</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">                </span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">                </span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span><span class="p">;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span><span class="w"> </span><span class="k">break</span><span class="p">;</span><span class="w">   </span><span class="c1">//如果没有发生任何交换，flag一定是1，数组已经有序，所以说直接结束战斗</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>这样，我们才算编写完了一个优化版的冒泡排序。</p>
+<p>当然，最后我们还需要介绍一个额外的概念：<strong>排序的稳定性</strong>，那么什么是稳定性呢？如果说大小相同的两个元素在排序之前和排序之后的先后顺序不变，这个排序算法就是稳定的。我们刚刚介绍的冒泡排序只会在前者大于后者的情况下才会进行交换，所以说不会影响到原本相等的两个元素顺序，因此冒泡排序是<strong>稳定的</strong>排序算法。</p>
+<h3 id="_4">插入排序<a class="headerlink" href="#_4" title="Permanent link">⚓︎</a></h3>
+<p>我们来介绍一种新的排序算法，插入排序，准确地说应该叫直接插入排序，它的核心思想就像我们玩斗地主一样。</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/04/RuSePqkc4ydVCHt.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220904214541199" src="https://s2.loli.net/2022/09/04/RuSePqkc4ydVCHt.png" /></a></p>
+<p>相信各位应该都玩过，每一轮游戏在开始之前，我们都要从牌堆去摸牌，那么摸到牌之后，在我们手中的牌顺序可能是乱的，这样肯定不行啊，牌都没理顺我们怎么知道哪些牌有多少呢？为了使得其有序，我们就会根据牌的顺序，将新摸过来的牌插入到对应的位置上，这样我们后面就不用再整理手里的牌了。</p>
+<p>而插入排序实际上也是一样的原理，我们默认前面的牌都是已经排好序的（一开始就只有第一张牌是有序状态），剩余的部分我们会挨着遍历，然后将其插到前面对应的位置上去，动画演示地址：https://visualgo.net/zh/sorting</p>
+<p>设数组长度为N，详细过程为：</p>
+<ul>
+<li>共进行N轮排序。</li>
+<li>每轮排序会从后面依次选择一个元素，与前面已经处于有序的元素，从后往前进行比较，直到遇到一个不大于当前元素的的元素，将当前元素插入到此元素的前面。</li>
+<li>插入元素后，后续元素则全部后移一位。</li>
+<li>当后面的所有元素全部遍历完成，全部插入到对应的位置之后，排序完成。</li>
+</ul>
+<p>比如下面的数组：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/04/BYOvgd3XCspNI9i.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220904212453328" src="https://s2.loli.net/2022/09/04/BYOvgd3XCspNI9i.png" /></a></p>
+<p>此时我们默认第一个元素已经是处于有序状态，我们从第二个元素开始看：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/04/Pd24brBwliqZuLh.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220904221510897" src="https://s2.loli.net/2022/09/04/Pd24brBwliqZuLh.png" /></a></p>
+<p>将其取出，从后往前，与前面的有序序列依次进行比较，首先比较的是4，发现比4小，继续向前，发现已经到头了，所以说直接放到最前面即可，注意在放到最前面之前，先将后续元素后移，腾出空间：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/04/JWbfZ9mVyrRMIvX.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220904221648492" src="https://s2.loli.net/2022/09/04/JWbfZ9mVyrRMIvX.png" /></a></p>
+<p>接着插入即可：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/04/ZkhRcGqr8Ays93z.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220904221904359" src="https://s2.loli.net/2022/09/04/ZkhRcGqr8Ays93z.png" /></a></p>
+<p>目前前面两个元素都是有序的状态了，我们继续来看第三个元素：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/04/i2o4REcPXBaTWpg.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220904221938583" src="https://s2.loli.net/2022/09/04/i2o4REcPXBaTWpg.png" /></a></p>
+<p>依然是从后往前看，我们发现上来就遇到了7小的4，所以说直接放到这个位置：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/04/vZ4rXTmCsx5ikdJ.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220904222022949" src="https://s2.loli.net/2022/09/04/vZ4rXTmCsx5ikdJ.png" /></a></p>
+<p>现在前面三个元素都是有序状态了，同样的，我们继续来看第四个元素：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/04/YLheUfDB8HnuEk1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220904222105375" src="https://s2.loli.net/2022/09/04/YLheUfDB8HnuEk1.png" /></a></p>
+<p>依次向前比较，发现到头了都没找到比1还小的元素，所以说将前面三个元素全部后移：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/04/7pz8NDEZbmTXaJY.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220904222145903" src="https://s2.loli.net/2022/09/04/7pz8NDEZbmTXaJY.png" /></a></p>
+<p>将1插入到对应的位置上去：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/04/6bnyKs3Iq7S5cYC.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220904222207544" src="https://s2.loli.net/2022/09/04/6bnyKs3Iq7S5cYC.png" /></a></p>
+<p>现在前四个元素都是有序的状态了，我们只需要按照同样的方式完成后续元素的遍历，最后得到的就是有序的数组了，我们来尝试编写一下代码：</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">insertSort</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">){</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">size</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">   </span><span class="c1">//从第二个元素开始看</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w">   </span><span class="c1">//j直接变成i，因为前面的都是有序的了，tmp相当于是抽出来的牌暂存一下</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">tmp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">   </span><span class="c1">//只要j&gt;0并且前一个还大于当前待插入元素，就一直往前找</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">            </span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w">   </span><span class="c1">//找的过程中需要不断进行后移操作，把位置腾出来</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">            </span><span class="n">j</span><span class="o">--</span><span class="p">;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span><span class="p">;</span><span class="w">  </span><span class="c1">//j最后在哪个位置，就是是哪个位置插入</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>当然，这个代码也是可以改进的，因为我们在寻找插入位置上逐个比较，花费了太多的时间，因为前面一部分元素已经是有序状态了，我们可以考虑使用二分搜索算法来查找对应的插入位置，这样就可以节省查找插入点的时间了：</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">binarySearch</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">target</span><span class="p">){</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">mid</span><span class="p">;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">left</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">        </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">left</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">target</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">])</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">   </span><span class="c1">//如果插入元素跟中间元素相等，直接返回后一位</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">target</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">])</span><span class="w">  </span><span class="c1">//如果大于待插入元素，说明插入位置肯定在左边</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">            </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">   </span><span class="c1">//范围划到左边</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">        </span><span class="k">else</span><span class="w">   </span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">            </span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">   </span><span class="c1">//范围划到右边</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">left</span><span class="p">;</span><span class="w">   </span><span class="c1">//不断划分范围，left也就是待插入位置了</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="p">}</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="kt">void</span><span class="w"> </span><span class="nf">insertSort</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">){</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">size</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">binarySearch</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">tmp</span><span class="p">);</span><span class="w">   </span><span class="c1">//由二分搜索来确定插入位置</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">k</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w">   </span><span class="c1">//依然是将后面的元素后移</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">        </span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span><span class="p">;</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>我们最后还是来讨论一下，插入排序算法的稳定性。那么没有经过优化的插入排序，实际上是不断向前寻找到一个不大于待插入元素的元素，所以说遇到相等的元素时只会插入到其后面，并没有更改相同元素原本的顺序，所以说插入排序也是<strong>稳定的</strong>排序算法（不过后面使用了二分搜索优化之后就不稳定了，比如有序数组中连续两个相等的元素，现在又来了一个相等的元素，此时中间的正好找到的是排在最前面的相等元素，返回其后一个位置，新插入的元素会将原本排在第二个的相等元素挤到后面去了）</p>
+<h3 id="_5">选择排序<a class="headerlink" href="#_5" title="Permanent link">⚓︎</a></h3>
+<p>我们来看看最后一种选择排序（准确的说应该是直接选择排序），这种排序也比较好理解，我们每次都去后面找一个最小的放到前面即可，算法演示网站：https://visualgo.net/zh/sorting</p>
+<p>设数组长度为N，详细过程为：</p>
+<ul>
+<li>共进行N轮排序。</li>
+<li>每轮排序会从后面的所有元素中寻找一个最小的元素出来，然后与已经排序好的下一个位置进行交换。</li>
+<li>进行N轮交换之后，得到有序数组。</li>
+</ul>
+<p>比如下面的数组：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/04/BYOvgd3XCspNI9i.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220904212453328" src="https://s2.loli.net/2022/09/04/BYOvgd3XCspNI9i.png" /></a></p>
+<p>第一次排序需要从整个数组中寻找一个最小的元素，并将其与第一个元素进行交换：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/05/JAoXIHwBDrg3y8n.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220905141347927" src="https://s2.loli.net/2022/09/05/JAoXIHwBDrg3y8n.png" /></a></p>
+<p>交换之后，第一个元素已经是有序状态了，我们继续从剩下的元素中寻找一个最小的：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/05/DsKk5GP6RJTOCXh.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220905141426011" src="https://s2.loli.net/2022/09/05/DsKk5GP6RJTOCXh.png" /></a></p>
+<p>此时2正好在第二个位置，假装交换一下，这样前面两个元素都已经是有序的状态了，我们接着来看剩余的：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/05/3B4n9cFKdxvWXtQ.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220905141527050" src="https://s2.loli.net/2022/09/05/3B4n9cFKdxvWXtQ.png" /></a></p>
+<p>此时发现3是最小的，所以说直接将其交换到第三个元素位置上：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/05/iTt8UoAPRHIG9lJ.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220905141629207" src="https://s2.loli.net/2022/09/05/iTt8UoAPRHIG9lJ.png" /></a></p>
+<p>这样，前三个元素都是有序的了，通过不断这样交换，最后我们得到的数组就是一个有序的了，我们来尝试编写一下代码：</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">selectSort</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">){</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">   </span><span class="c1">//因为最后一个元素一定是在对应位置上的，所以只需要进行N - 1轮排序</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w">   </span><span class="c1">//记录一下当前最小的元素，默认是剩余元素中的第一个元素</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">size</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span><span class="w">   </span><span class="c1">//挨个遍历剩余的元素，如果遇到比当前记录的最小元素还小的元素，就更新</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">min</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">                </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="p">;</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w">    </span><span class="c1">//找出最小的元素之后，开始交换</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">        </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">min</span><span class="p">];</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">        </span><span class="n">arr</span><span class="p">[</span><span class="n">min</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span><span class="p">;</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>当然，对于选择排序，我们也可以进行优化，因为每次都需要选一个最小的出来，我们不妨再顺手选个最大的出来，小的往左边丢，大的往右边丢，这样就能够有双倍的效率完成了。</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">swap</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">){</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="o">*</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">b</span><span class="p">;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="o">*</span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span><span class="p">;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">}</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="kt">void</span><span class="w"> </span><span class="nf">selectSort</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">){</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">   </span><span class="c1">//相当于左端和右端都是已经排好序的，中间是待排序的，所以说范围不断缩小</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">left</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">right</span><span class="p">;</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">right</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">min</span><span class="p">])</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w">   </span><span class="c1">//同时找最小的和最大的</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">max</span><span class="p">])</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">        </span><span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">max</span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">right</span><span class="p">]);</span><span class="w">   </span><span class="c1">//这里先把大的换到右边</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">        </span><span class="c1">//注意大的换到右边之后，有可能被换出来的这个就是最小的，所以说需要判断一下</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">        </span><span class="c1">//如果遍历完发现最小的就是当前右边排序的第一个元素</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">        </span><span class="c1">//此时因为已经被换出来了，所以说需要将min改到换出来的那个位置</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">min</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">;</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">        </span><span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">min</span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">left</span><span class="p">]);</span><span class="w">   </span><span class="c1">//接着把小的换到左边</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">        </span><span class="n">left</span><span class="o">++</span><span class="p">;</span><span class="w">    </span><span class="c1">//这一轮完事之后，缩小范围</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">        </span><span class="n">right</span><span class="o">--</span><span class="p">;</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>最后我们来分析一下选择排序的稳定性，首先选择排序是每次选择最小的那一个，在向前插入时，会直接进行交换操作，比如原序列为 3,3,1，此时选择出1是最小的元素，与最前面的3进行交换，交换之后，原本排在第一个的3跑到最后去了，破坏了原有的顺序，所以说选择排序是<strong>不稳定的</strong>排序算法。</p>
+<p>我们来总结一下上面所学的三种排序算法，假设需要排序的数组长度为<code>n</code>：</p>
+<ul>
+<li><strong>冒泡排序（优化版）：</strong></li>
+<li><strong>最好情况时间复杂度：</strong><span class="arithmatex">\(O(n)\)</span>，如果本身就是有序的，那么我们只需要一次遍历，当标记检测到没有发生交换，直接就结束了，所以说一遍就搞定。</li>
+<li><strong>最坏情况时间复杂度：</strong><span class="arithmatex">\(O(n^2)\)</span>，也就是硬生生把每一轮都吃满了，比如完全倒序的数组就会这样。</li>
+<li><strong>空间复杂度：</strong>因为只需要一个变量来暂存一下需要交换的变量，所以说空间复杂度为 <span class="arithmatex">\(O(1)\)</span></li>
+<li><strong>稳定性：</strong>稳定</li>
+<li><strong>插入排序：</strong></li>
+<li><strong>最好情况时间复杂度：</strong><span class="arithmatex">\(O(n)\)</span>，如果本身就是有序的，因为插入的位置也是同样的位置，当数组本身就是有序的情况下时，每一轮我们不需要变动任何其他元素。</li>
+<li><strong>最坏情况时间复杂度：</strong><span class="arithmatex">\(O(n^2)\)</span>，比如完全倒序的数组就会这样，每一轮都得完完整整找到最前面插入。</li>
+<li><strong>空间复杂度</strong>：同样只需一个变量来存一下抽出来的元素，所以说空间复杂度为 <span class="arithmatex">\(O(1)\)</span></li>
+<li><strong>稳定性：</strong>稳定</li>
+<li><strong>选择排序：</strong></li>
+<li><strong>最好情况时间复杂度：</strong><span class="arithmatex">\(O(n^2)\)</span>，即使数组本身就是有序的，每一轮还是得将剩余部分挨个找完之后才能确定最小的元素，所以说依然需要平方阶。</li>
+<li><strong>最坏情况时间复杂度：</strong><span class="arithmatex">\(O(n^2)\)</span>，不用多说了吧。</li>
+<li><strong>空间复杂度</strong>：每一轮只需要记录最小的元素位置即可，所以说空间复杂度为 <span class="arithmatex">\(O(1)\)</span></li>
+<li><strong>稳定性：</strong>不稳定</li>
+</ul>
+<p>表格如下，建议记住：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">排序算法</th>
+<th style="text-align: center;">最好情况</th>
+<th style="text-align: center;">最坏情况</th>
+<th style="text-align: center;">空间复杂度</th>
+<th style="text-align: center;">稳定性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">冒泡排序</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n^2)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
+<td style="text-align: center;">稳定</td>
+</tr>
+<tr>
+<td style="text-align: center;">插入排序</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n^2)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
+<td style="text-align: center;">稳定</td>
+</tr>
+<tr>
+<td style="text-align: center;">选择排序</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n^2)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n^2)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
+<td style="text-align: center;">不稳定</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_6">进阶排序<a class="headerlink" href="#_6" title="Permanent link">⚓︎</a></h2>
+<p>前面我们介绍了三种基础排序算法，它们的平均情况时间复杂度都到达了 <span class="arithmatex">\(O(n^2)\)</span>，那么能否找到更快的排序算法呢？这一部分，我们将继续介绍前面三种排序算法的进阶版本。</p>
+<h3 id="_7">快速排序<a class="headerlink" href="#_7" title="Permanent link">⚓︎</a></h3>
+<p>在C语言程序设计篇，我们也介绍过快速排序，<strong>快速排序</strong>是冒泡排序的进阶版本，在冒泡排序中，进行元素的比较和交换是在相邻元素之间进行的，元素每次交换只能移动一个位置，所以比较次数和移动次数较多，效率相对较低。而在快速排序中，元素的比较和交换是从两端向中间进行的，较大的元素一轮就能够交换到后面的位置，而较小的元素一轮就能交换到前面的位置，元素每次移动的距离较远，所以比较次数和移动次数较少，就像它的名字一样，速度更快。</p>
+<p>实际上快速排序每一轮的目的就是将大的丢到基准右边去，小的丢到基准左边去。</p>
+<p>设数组长度为N，详细过程为：</p>
+<ul>
+<li>在一开始，排序范围是整个数组</li>
+<li>排序之前，我们选择整个排序范围内的第一个元素作为基准，对排序范围内的元素进行快速排序</li>
+<li>先从最右边向左看，依次将每一个元素与基准元素进行比较，如果发现比基准元素小，那么就与左边遍历位置上的元素（一开始是基准元素的位置）进行交换，此时保留右边当前遍历的位置。</li>
+<li>交换后，转为从左往右开始遍历元素，如果发现比基准元素大，那么就与之前保留的右边遍历的位置上的元素进行交换，同样保留左边当前的位置，循环执行上一个步骤。</li>
+<li>当左右遍历撞到一起时，本轮快速排序完成，最后在最中间的位置就是基准元素的位置了。</li>
+<li>以基准位置为中心，划分左右两边，以同样的方式执行快速排序。</li>
+</ul>
+<p>比如下面的数组：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/04/BYOvgd3XCspNI9i.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220904212453328" src="https://s2.loli.net/2022/09/04/BYOvgd3XCspNI9i.png" /></a></p>
+<p>首先我们选择第一个元素4作为基准元素，一开始左右指针位于两端：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/05/LneNjifuZ4JOgKl.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220905210056432" src="https://s2.loli.net/2022/09/05/LneNjifuZ4JOgKl.png" /></a></p>
+<p>此时从右往左开始看，直到遇到一个比4小的元素，首先是6，肯定不是，将指针往后移动：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/05/zVkd4wvAq9FK2ET.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220905210625181" src="https://s2.loli.net/2022/09/05/zVkd4wvAq9FK2ET.png" /></a></p>
+<p>此时继续让3和4进行比较，发现比4小，那么此时直接将3交换（其实直接覆盖过去就行了）到左边指针所指向的元素位置：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/05/Z7y3sO5qDWxYdiL.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220905210730105" src="https://s2.loli.net/2022/09/05/Z7y3sO5qDWxYdiL.png" /></a></p>
+<p>此时我们转为从左往右看，如果遇到比4大的元素，就交换到右边指针处，3肯定不是了，因为刚刚才缓过来，接着就是2：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/05/cXk7xEp2IfSH9iq.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220905210851474" src="https://s2.loli.net/2022/09/05/cXk7xEp2IfSH9iq.png" /></a></p>
+<p>2也没有4大，所以说继续往后看，此时7比4要大，那么继续交换：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/05/zn8asNlCbOyv1cA.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220905211300102" src="https://s2.loli.net/2022/09/05/zn8asNlCbOyv1cA.png" /></a></p>
+<p>接着，又开始从右往左看：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/05/APvaMt4jJV79Dpn.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220905211344027" src="https://s2.loli.net/2022/09/05/APvaMt4jJV79Dpn.png" /></a></p>
+<p>此时5是比4要大的，继续向前，发现1比4要小，所以说继续交换：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/05/cCi1xkSfIVjEsPK.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220905211427939" src="https://s2.loli.net/2022/09/05/cCi1xkSfIVjEsPK.png" /></a></p>
+<p>接着又转为从左往右看，此时两个指针撞到一起了，排序结束，最后两个指针所指向的位置就是给基准元素的位置了：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/05/eaRN5ZvVs8bc9lU.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220905211543845" src="https://s2.loli.net/2022/09/05/eaRN5ZvVs8bc9lU.png" /></a></p>
+<p>本轮快速排序结束后，左边不一定都是有序的，但是一定比基准元素要小，右边一定比基准元素大。接着我们以基准为中心，分成两个部分再次进行快速排序：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/05/4MLoPCKs1W9Y3Ox.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220905211741787" src="https://s2.loli.net/2022/09/05/4MLoPCKs1W9Y3Ox.png" /></a></p>
+<p>这样，我们最后就可以使得整个数组有序了，当然快速排序还有其他的说法，有些是左右都找到了再交换，我们这里的是只要找到就丢过去。既然现在思路已经清楚了，我们就来尝试实现一下快速排序吧：</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">quickSort</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">end</span><span class="p">){</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">start</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w">    </span><span class="c1">//范围不可能无限制的划分下去，要是范围划得都没了，肯定要结束了</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">end</span><span class="p">,</span><span class="w"> </span><span class="n">pivot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">left</span><span class="p">];</span><span class="w">   </span><span class="c1">//这里我们定义两个指向左右两个端点的指针，以及取出基准</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">left</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">     </span><span class="c1">//只要两个指针没相遇，就一直循环进行下面的操作</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">left</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">right</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">pivot</span><span class="p">)</span><span class="w"> </span><span class="n">right</span><span class="o">--</span><span class="p">;</span><span class="w">   </span><span class="c1">//从右向左看，直到遇到比基准小的</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">        </span><span class="n">arr</span><span class="p">[</span><span class="n">left</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">right</span><span class="p">];</span><span class="w">    </span><span class="c1">//遇到比基准小的，就丢到左边去</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">left</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">left</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">pivot</span><span class="p">)</span><span class="w"> </span><span class="n">left</span><span class="o">++</span><span class="p">;</span><span class="w">   </span><span class="c1">//从左往右看，直到遇到比基准大的</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">        </span><span class="n">arr</span><span class="p">[</span><span class="n">right</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">left</span><span class="p">];</span><span class="w">    </span><span class="c1">//遇到比基准大的，就丢到右边去</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="n">arr</span><span class="p">[</span><span class="n">left</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pivot</span><span class="p">;</span><span class="w">    </span><span class="c1">//最后相遇的位置就是基准存放的位置了</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="n">quickSort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">   </span><span class="c1">//不包含基准，划分左右两边，再次进行快速排序</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="n">quickSort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">);</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>这样，我们就实现了快速排序。我们还是来分析一下快速排序的稳定性，快速排序是只要遇到比基准小或者大的元素就直接交换，比如原数组就是：<strong>2</strong>,2,1，此时第一个元素作为基准，首先右边1会被丢过来，变成：1,2,1，然后从左往右，因为只有遇到比基准2更大的元素才会换，所以说最后基准会被放到最后一个位置：1,2,<strong>2</strong>，此时原本应该在前面的2就跑到后面去了，所以说快速排序算法，是一种<strong>不稳定的</strong>排序算法。</p>
+<p><strong>双轴快速排序（选学）</strong></p>
+<p>这里需要额外补充个快速排序的升级版，<strong>双轴快速排序</strong>，Java语言中的数组工具类则是采用的此排序方式对大数组进行排序的。我们来看看它相比快速排序，又做了哪些改进。首先普通的快速排序算法在遇到极端情况时可能会这样：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/aEbUInwHOTi1GF7.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906131959909" src="https://s2.loli.net/2022/09/06/aEbUInwHOTi1GF7.png" /></a></p>
+<p>整个数组正好是倒序的，那么相当于上来就要把整个数组找完，然后把8放到最后一个位置，此时第一轮结束：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/erMHzcW58vVqFGa.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906132112592" src="https://s2.loli.net/2022/09/06/erMHzcW58vVqFGa.png" /></a></p>
+<p>由于8直接跑到最右边了，那么此时没有右半部分，只有做半部分，此时左半部分继续进行快速排序：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/6yQa7e8VTYgpUZN.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906132244369" src="https://s2.loli.net/2022/09/06/6yQa7e8VTYgpUZN.png" /></a></p>
+<p>此时1又是最小的一个元素，导致最后遍历完了，1都还是在那个位置，此时没有左半部分，只有右半部分：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/r9LlRfEotZMmdDn.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906132344525" src="https://s2.loli.net/2022/09/06/r9LlRfEotZMmdDn.png" /></a></p>
+<p>此时基准是7，又是最大的，真是太倒霉了，排完之后7跑到最左边，还是没有右半部分：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/PicWXjIBMnfUd7H.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906132437765" src="https://s2.loli.net/2022/09/06/PicWXjIBMnfUd7H.png" /></a></p>
+<p>我们发现，在这种极端情况下，每一轮需要完整遍历整个范围，并且每一轮都会有一个最大或是最小的元素被推向两边，这不就是冒泡排序吗？所以说，在极端情况下，快速排序会退化为冒泡排序，因此有些快速排序会随机选取基准元素。为了解决这种在极端情况下出现的问题，我们可以再添加一个基准元素，这样即使出现极端情况，除非两边都是最小元素或是最大元素，否则至少一个基准能正常进行分段，出现极端情况的概率也会减小很多：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/2YBc1goqMGwuTs4.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906132945691" src="https://s2.loli.net/2022/09/06/2YBc1goqMGwuTs4.png" /></a></p>
+<p>此时第一个元素和最后一个元素都作为基准元素，将整个返回划分为三段，假设基准1小于基准2，那么第一段存放的元素全部要小于基准1，第二段存放的元素全部要不小于基准1同时不大于基准2，第三段存放的元素全部要大于基准2：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/MsvJC1OtnbuGye9.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906133219853" src="https://s2.loli.net/2022/09/06/MsvJC1OtnbuGye9.png" /></a></p>
+<p>因此，在划分为三段之后，每轮双轴快排结束后需要对这三段分别继续进行双轴快速排序，最后就可以使得整个数组有序了，当然这种排序算法更适用于哪些量比较大的数组，如果量比较小的话，考虑到双轴快排要执行这么多操作，其实还不如插入排序来的快。</p>
+<p>我们来模拟一下双轴快速排序是如何进行的:</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/WFASGVCJaQHhBX3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906140255444" src="https://s2.loli.net/2022/09/06/WFASGVCJaQHhBX3.png" /></a></p>
+<p>首先取出首元素和尾元素作为两个基准，然后我们需要对其进行比较，如果基准1大于基准2，那么需要先交换两个基准，只不过这里因为4小于6，所以说不需要进行交换。</p>
+<p>此时我们需要创建三个指针：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/y283Ne7M6XmUtZA.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906140538076" src="https://s2.loli.net/2022/09/06/y283Ne7M6XmUtZA.png" /></a></p>
+<p>因为有三个区域，其中蓝色指针位置及其左边的区域都是小于基准1的，橙色指针左边到蓝色指针之间的区域都是不小于基准1且不大于基准2的，绿色指针位置及其右边的区域都是大于基准2的，橙色指针和绿色指针之间的区域，都是待排序区域。</p>
+<p>首先我们从橙色指针所指元素开始进行判断，分三种情况：</p>
+<ul>
+<li>如果小于基准1，那么需要先将蓝色指针向后移，把元素交换换到蓝色指针那边去，然后橙色指针也向后移动。</li>
+<li>如果不小于基准1且不大于基准2，那么不需要做什么，直接把橙色指针向前移动即可，因为本身就是这个范围。</li>
+<li>如果大于基准2，那么需要丢到右边去，先将右边指针左移，不断向前找到一个不比基准2大的，这样才能顺利地交换过去。</li>
+</ul>
+<p>首先我们来看看，此时橙色指针指向的是2，那么2是小于基准1的，我们需要先将蓝色指针后移，然后交换橙色和蓝色指针上的元素，只不过这里由于是同一个，所以说不变，此时两个指针都后移了一位：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/HA8tKzv6Uri45p1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906141556398" src="https://s2.loli.net/2022/09/06/HA8tKzv6Uri45p1.png" /></a></p>
+<p>同样的，我们继续来看橙色指针所指元素，此时为7，大于基准2，那么此时需要在右边找到一个不大于基准2的元素：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/Nj2PvlyYCnSb3kV.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906141653453" src="https://s2.loli.net/2022/09/06/Nj2PvlyYCnSb3kV.png" /></a></p>
+<p>绿色指针从右开始向左找，此时找到3，直接交换橙色指针和蓝色指针元素：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/J3ymMprRPTSHFWi.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906141758610" src="https://s2.loli.net/2022/09/06/J3ymMprRPTSHFWi.png" /></a></p>
+<p>下一轮开始继续看橙色指针元素，此时发现是小于基准1的，所以说先向前移动蓝色指针，发现和橙色又在一起了，交换了跟没交换一样，此时两个指针都后移了一位：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/7iSnb8ctryz6A1l.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906141926006" src="https://s2.loli.net/2022/09/06/7iSnb8ctryz6A1l.png" /></a></p>
+<p>新的一轮继续来看橙色指针所指元素，此时我们发现1也是小于基准1的，先移动蓝色指针，再交换，在移动橙色指针，跟上面一样，交换个寂寞：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/wrgQAsSTHjd5Ynq.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906142041202" src="https://s2.loli.net/2022/09/06/wrgQAsSTHjd5Ynq.png" /></a></p>
+<p>此时橙色指针指向8，大于基准2，那么同样需要在右边继续找一个不大于基准2的进行交换：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/udGnpJHzxP8SK4l.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906142134949" src="https://s2.loli.net/2022/09/06/udGnpJHzxP8SK4l.png" /></a></p>
+<p>此时找到5，满足条件，交换即可：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/oEycNqQVhbuC3Tx.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906142205055" src="https://s2.loli.net/2022/09/06/oEycNqQVhbuC3Tx.png" /></a></p>
+<p>我们继续来看橙色指针，发现此时橙色指针元素不小于基准1且不大于基准2，那么根据前面的规则，只需要向前移动橙色指针即可：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/YSxmL2tiyBQGl8C.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906142303329" src="https://s2.loli.net/2022/09/06/YSxmL2tiyBQGl8C.png" /></a></p>
+<p>此时橙色指针和绿色指针撞一起了，没有剩余待排序元素了，最后我们将两个位于两端点基准元素与对应的指针进行交换，基准1与蓝色指针交换，基准2与绿色指针进行交换：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/C2AnBDiUp7qxuSb.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906142445417" src="https://s2.loli.net/2022/09/06/C2AnBDiUp7qxuSb.png" /></a></p>
+<p>此时分出来的三个区域，正好满足条件，当然这里运气好，直接整个数组就有序了，不过按照正常的路线，我们还得继续对这剩下的三个区域进行双轴快速排序，最后即可排序完成。</p>
+<p>现在我们来尝试编写一下双轴快速排序的代码：</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">dualPivotQuickSort</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">start</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w">     </span><span class="c1">//首先结束条件还是跟之前快速排序一样，因为不可能无限制地分下去，分到只剩一个或零个元素时该停止了</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">start</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">end</span><span class="p">])</span><span class="w">    </span><span class="c1">//先把首尾两个基准进行比较，看看谁更大</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">        </span><span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">start</span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">end</span><span class="p">]);</span><span class="w">    </span><span class="c1">//把大的换到后面去</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">pivot1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">start</span><span class="p">],</span><span class="w"> </span><span class="n">pivot2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">end</span><span class="p">];</span><span class="w">    </span><span class="c1">//取出两个基准元素</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">end</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">   </span><span class="c1">//因为分了三块区域，此时需要三个指针来存放</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">mid</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="c1">//因为左边冲在最前面的是mid指针，所以说跟之前一样，只要小于right说明mid到right之间还有没排序的元素</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">pivot1</span><span class="p">)</span><span class="w">     </span><span class="c1">//如果mid所指向的元素小于基准1，说明需要放到最左边</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">            </span><span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="o">++</span><span class="n">left</span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="o">++</span><span class="p">]);</span><span class="w">   </span><span class="c1">//直接跟最左边交换，然后left和mid都向前移动</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">pivot2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="c1">//在如果不小于基准1但是小于基准2，说明在中间</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">            </span><span class="n">mid</span><span class="o">++</span><span class="p">;</span><span class="w">   </span><span class="c1">//因为mid本身就是在中间的，所以说只需要向前缩小范围就行</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="c1">//最后就是在右边的情况了</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="o">--</span><span class="n">right</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">pivot2</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">mid</span><span class="p">);</span><span class="w">  </span><span class="c1">//此时我们需要找一个右边的位置来存放需要换过来的元素，注意先移动右边指针</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">mid</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="k">break</span><span class="p">;</span><span class="w">   </span><span class="c1">//要是把剩余元素找完了都还没找到一个比基准2小的，那么就直接结束，本轮排序已经完成了</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">            </span><span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">right</span><span class="p">]);</span><span class="w">   </span><span class="c1">//如果还有剩余元素，说明找到了，直接交换right指针和mid指针所指元素</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">    </span><span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">start</span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">left</span><span class="p">]);</span><span class="w">    </span><span class="c1">//最后基准1跟left交换位置，正好左边的全部比基准1小</span>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">    </span><span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">end</span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">right</span><span class="p">]);</span><span class="w">     </span><span class="c1">//最后基准2跟right交换位置，正好右边的全部比基准2大</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">    </span><span class="n">dualPivotQuickSort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">    </span><span class="c1">//继续对三个区域再次进行双轴快速排序</span>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">    </span><span class="n">dualPivotQuickSort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="w">    </span><span class="n">dualPivotQuickSort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">);</span>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>此部分仅作为选学，不强制要求。</p>
+<h3 id="_8">希尔排序<a class="headerlink" href="#_8" title="Permanent link">⚓︎</a></h3>
+<p>希尔排序是直接插入排序的进阶版本（希尔排序又叫<strong>缩小增量排序</strong>）插入排序虽然很好理解，但是在极端情况下会出现让所有已排序元素后移的情况（比如刚好要插入的是一个特别小的元素）为了解决这种问题，希尔排序对插入排序进行改进，它会对整个数组按照步长进行分组，优先比较距离较远的元素。</p>
+<p>这个步长是由一个增量序列来定的，这个增量序列很关键，大量研究表明，当增量序列为 <code>dlta[k] = 2^(t-k+1)-1（0&lt;=k&lt;=t&lt;=(log2(n+1))）</code>时，效率很好，只不过为了简单，我们一般使用 <span class="arithmatex">\(\frac {n} {2}\)</span>、<span class="arithmatex">\(\frac {n} {4}\)</span>、<span class="arithmatex">\(\frac {n} {8}\)</span>、...、1 这样的增量序列。</p>
+<p>设数组长度为N，详细过程为：</p>
+<ul>
+<li>首先求出最初的步长，n/2即可。</li>
+<li>我们将整个数组按照步长进行分组，也就是两两一组（如果n为奇数的话，第一组会有三个元素）</li>
+<li>我们分别在这些分组内进行插入排序。</li>
+<li>排序完成后，我们将步长/2，重新分组，重复上述步骤，直到步长为1时，插入排序最后一遍结束。</li>
+</ul>
+<p>这样的话，因为组内就已经调整好了一次顺序，小的元素尽可能排在前面，即使在最后一遍排序中出现遇到小元素要插入的情况，也不会有太多的元素需要后移。</p>
+<p>我们以下面的数组为例：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/05/GLEjym78BWNUtCf.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220905223505975" src="https://s2.loli.net/2022/09/05/GLEjym78BWNUtCf.png" /></a></p>
+<p>首先数组长度为8，直接整除2，得到34，那么步长就是4了，我们按照4的步长进行分组：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/05/S72NcgKBzIA54om.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220905223609936" src="https://s2.loli.net/2022/09/05/S72NcgKBzIA54om.png" /></a></p>
+<p>其中，4、8为第一组，2、5 为第二组，7、3为第三组，1、6为第四组，我们分别在这四组内进行插入排序，组内排序之后的结果为：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/05/XO4a9HKP7vhGTmf.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220905223659584" src="https://s2.loli.net/2022/09/05/XO4a9HKP7vhGTmf.png" /></a></p>
+<p>可以看到目前小的元素尽可能地在往前面走，虽然还不是有序的，接着我们缩小步长，4/2=2，此时按照这个步长划分：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/05/sdKhcGmapgOZkCP.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220905223804907" src="https://s2.loli.net/2022/09/05/sdKhcGmapgOZkCP.png" /></a></p>
+<p>此时4、3、8、7为一组，2、1、5、6为一组，我们继续在这两个组内进行排序，得到：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/05/MD8UFxJvg274Qw6.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220905224111803" src="https://s2.loli.net/2022/09/05/MD8UFxJvg274Qw6.png" /></a></p>
+<p>最后我们继续将步长/2，得到2/2=1，此时步长变为1，也就相当于整个数组为一组，再次进行一次插入排序，此时我们会发现，小的元素都靠到左边来了，此时再进行插入排序会非常轻松。</p>
+<p>我们现在就来尝试编写一下代码：</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">shellSort</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">){</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">delta</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">        </span><span class="c1">//这里依然是使用之前的插入排序，不过此时需要考虑分组了</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delta</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">size</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">   </span><span class="c1">//我们需要从delta开始，因为前delta个组的第一个元素默认是有序状态</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w">   </span><span class="c1">//这里依然是把待插入的先抽出来</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">delta</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">delta</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">tmp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">   </span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">                </span><span class="c1">//注意这里比较需要按步长往回走，所以说是j - delta，此时j必须大于等于delta才可以，如果j - delta小于0说明前面没有元素了</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">                </span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">delta</span><span class="p">];</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">                </span><span class="n">j</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">delta</span><span class="p">;</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">            </span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span><span class="p">;</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">        </span><span class="n">delta</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">    </span><span class="c1">//分组插排完事之后，重新计算步长</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>虽然这里用到了三层循环嵌套，但是实际上的时间复杂度可能比 <span class="arithmatex">\(O(n^2)\)</span> 还小，因为能够保证小的元素一定往左边靠，所以排序次数实际上并没有我们想象中的那么多，由于证明过程过于复杂，这里就不列出了。</p>
+<p>那么希尔排序是不是稳定的呢？因为现在是按步长进行分组，有可能会导致原本相邻的两个相同元素，后者在自己的组内被换到前面去了，所以说希尔排序是<strong>不稳定的</strong>排序算法。</p>
+<h3 id="_9">堆排序<a class="headerlink" href="#_9" title="Permanent link">⚓︎</a></h3>
+<p>我们来看最后一种，堆排序也是选择排序的一种，但是它能够比直接选择排序更快。还记得我们前面讲解的大顶堆和小顶堆吗？我们来回顾一下：</p>
+<blockquote>
+<p>对于一棵完全二叉树，树中父亲结点都比孩子结点小的我们称为<strong>小根堆</strong>（小顶堆），树中父亲结点都比孩子结点大则是<strong>大根堆</strong></p>
+</blockquote>
+<p>得益于堆是一棵完全二叉树，我们可以很轻松地使用数组来进行表示：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/08/18/XpYVN2gslOfWLSr.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220818110224673" src="https://s2.loli.net/2022/08/18/XpYVN2gslOfWLSr.png" /></a></p>
+<p>我们通过构建一个堆，就可以将一个无序的数组依次输入，最后存放的序列是一个按顺序排放的序列，利用这种性质，我们可以很轻松地利用堆进行排序，我们先来写一个小顶堆：</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">E</span><span class="p">;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">MinHeap</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="n">E</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">arr</span><span class="p">;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">;</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">capacity</span><span class="p">;</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p">}</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Heap</span><span class="p">;</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="kt">_Bool</span><span class="w"> </span><span class="nf">initHeap</span><span class="p">(</span><span class="n">Heap</span><span class="w"> </span><span class="n">heap</span><span class="p">){</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="n">heap</span><span class="o">-&gt;</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="n">heap</span><span class="o">-&gt;</span><span class="n">capacity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">    </span><span class="n">heap</span><span class="o">-&gt;</span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="w"> </span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">heap</span><span class="o">-&gt;</span><span class="n">capacity</span><span class="p">);</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">heap</span><span class="o">-&gt;</span><span class="n">arr</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="p">}</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="kt">_Bool</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">Heap</span><span class="w"> </span><span class="n">heap</span><span class="p">,</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">element</span><span class="p">){</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">heap</span><span class="o">-&gt;</span><span class="n">size</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">heap</span><span class="o">-&gt;</span><span class="n">capacity</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">++</span><span class="n">heap</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">;</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">index</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">heap</span><span class="o">-&gt;</span><span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">        </span><span class="n">heap</span><span class="o">-&gt;</span><span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">heap</span><span class="o">-&gt;</span><span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">];</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">        </span><span class="n">index</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="w">    </span><span class="n">heap</span><span class="o">-&gt;</span><span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element</span><span class="p">;</span>
+</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="p">}</span>
+</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>
+</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="n">E</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="n">Heap</span><span class="w"> </span><span class="n">heap</span><span class="p">){</span>
+</span><span id="__span-9-27"><a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a><span class="w">    </span><span class="n">E</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">heap</span><span class="o">-&gt;</span><span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">heap</span><span class="o">-&gt;</span><span class="n">arr</span><span class="p">[</span><span class="n">heap</span><span class="o">-&gt;</span><span class="n">size</span><span class="o">--</span><span class="p">];</span>
+</span><span id="__span-9-28"><a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-9-29"><a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">index</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">heap</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-30"><a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">child</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-9-31"><a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">child</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">heap</span><span class="o">-&gt;</span><span class="n">size</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">heap</span><span class="o">-&gt;</span><span class="n">arr</span><span class="p">[</span><span class="n">child</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">heap</span><span class="o">-&gt;</span><span class="n">arr</span><span class="p">[</span><span class="n">child</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">])</span>
+</span><span id="__span-9-32"><a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a><span class="w">            </span><span class="n">child</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-9-33"><a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">e</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">heap</span><span class="o">-&gt;</span><span class="n">arr</span><span class="p">[</span><span class="n">child</span><span class="p">])</span><span class="w"> </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-9-34"><a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="n">heap</span><span class="o">-&gt;</span><span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">heap</span><span class="o">-&gt;</span><span class="n">arr</span><span class="p">[</span><span class="n">child</span><span class="p">];</span>
+</span><span id="__span-9-35"><a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a><span class="w">        </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">child</span><span class="p">;</span>
+</span><span id="__span-9-36"><a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-9-37"><a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a><span class="w">    </span><span class="n">heap</span><span class="o">-&gt;</span><span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">;</span>
+</span><span id="__span-9-38"><a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">max</span><span class="p">;</span>
+</span><span id="__span-9-39"><a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>接着我们只需要将这些元素挨个插入到堆中，然后再挨个拿出来，得到的就是一个有序的顺序了：</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">};</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">MinHeap</span><span class="w"> </span><span class="n">heap</span><span class="p">;</span><span class="w">    </span><span class="c1">//先创建堆</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="n">initHeap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">heap</span><span class="p">);</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">        </span><span class="n">insert</span><span class="p">(</span><span class="o">&amp;</span><span class="n">heap</span><span class="p">,</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w">   </span><span class="c1">//直接把乱序的数组元素挨个插入</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">        </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delete</span><span class="p">(</span><span class="o">&amp;</span><span class="n">heap</span><span class="p">);</span><span class="w">    </span><span class="c1">//然后再一个一个拿出来，就是按顺序的了</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>最后得到的结果为：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/iedURC8vVpcMgn6.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906001134488" src="https://s2.loli.net/2022/09/06/iedURC8vVpcMgn6.png" /></a></p>
+<p>虽然这样用起来比较简单，但是需要额外 <span class="arithmatex">\(O(n)\)</span> 的空间来作为堆，所以我们可以对其进行进一步的优化，减少其空间上的占用。那么怎么进行优化呢，我们不妨换个思路，直接对给定的数组进行堆的构建。</p>
+<p>设数组长度为N，详细过程为：</p>
+<ul>
+<li>首先将给定的数组调整为一个大顶堆</li>
+<li>进行N轮选择，每次都选择大顶堆顶端的元素从数组末尾开始向前存放（交换堆顶和堆的最后一个元素）</li>
+<li>交换完成后，重新对堆的根结点进行调整，使其继续满足大顶堆的性质，然后重复上述操作。</li>
+<li>当N轮结束后，得到的就是从小到大排列的数组了。</li>
+</ul>
+<p>我们先将给定数组变成一棵完全二叉树，以下面数组为例：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/GTkWlzpZbxMX58K.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906220020172" src="https://s2.loli.net/2022/09/06/GTkWlzpZbxMX58K.png" /></a></p>
+<p>此时，这棵二叉树还并不是堆，我们的首要目标是将其变成一个大顶堆。那么怎么将这棵二叉树变成一个大顶堆呢？我们只需要从最后一个非叶子结点（从上往下的顺序）开始进行调整即可，比如此时1是最后一个非叶子结点，所以说就从1开始，我们需要进行比较，如果其孩子结点大于它，那么需要将最大的那个孩子交换上来，此时其孩子结点6大于1，所以说需要交换：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/bpnSDlOLKawGRxT.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906221306519" src="https://s2.loli.net/2022/09/06/bpnSDlOLKawGRxT.png" /></a></p>
+<p>接着我们来看倒数第二个非叶子结点，也就是7，那么此时两个孩子都是小于它的，所以说不需要做任何调整，我们接着来看倒数第三个非叶子结点2，此时2的两个孩子6、8都大于2，那么我们选择两个孩子里面一个最大的交换上去：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/svNPURhJbzAQo9d.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906221504364" src="https://s2.loli.net/2022/09/06/svNPURhJbzAQo9d.png" /></a></p>
+<p>最后就剩下根结点这一个非叶子结点了，此时我们4的左右孩子都大于4，那么依然需要进行调整：</p>
+<p><a class="glightbox" href="/Users/nagocoler/Library/Application Support/typora-user-images/image-20220906221657599.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906221657599" src="/Users/nagocoler/Library/Application Support/typora-user-images/image-20220906221657599.png" /></a></p>
+<p>在调整之后，还没有结束，因为此时4换下去之后依然不满足大顶堆的性质，此时4的左孩子大于4，我们还需要继续向下看：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/MmzbFTLYSZAW4gv.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906221833012" src="https://s2.loli.net/2022/09/06/MmzbFTLYSZAW4gv.png" /></a></p>
+<p>交换之后，此时整个二叉树就满足大顶堆的性质了，我们第一次初始调整也就完成了。</p>
+<p>此时开始第二步，我们需要一个一个地将堆顶元素往后面进行交换，相当于每次都去取一个最大的出来，直到取完，首先交换堆顶元素和最后一个元素：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/8fBeubxnqD1rJEZ.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906222327297" src="https://s2.loli.net/2022/09/06/8fBeubxnqD1rJEZ.png" /></a></p>
+<p>此时整个数组中最大的元素已经排到对应的位置上了，然后我们不再考虑最后一个元素，此时将前面的剩余元素继续看做一棵完全二叉树，对根结点重新进行一次堆化（只需要调整根结点即可，因为其他非叶子结点的没有变动），使得其继续满足大顶堆的性质：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/2RTG76ejsKyCthU.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906222819554" src="https://s2.loli.net/2022/09/06/2RTG76ejsKyCthU.png" /></a></p>
+<p>还没完，继续调整：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/clEdF5YBO7iKDP6.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906222858752" src="https://s2.loli.net/2022/09/06/clEdF5YBO7iKDP6.png" /></a></p>
+<p>此时第一轮结束，接着第二轮，重复上述操作，首先依然是将堆顶元素丢到倒数第二个位置上，相当于将倒数第二大的元素放到对应的位置上去：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/KaZGOsWD2chNf3i.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906222934602" src="https://s2.loli.net/2022/09/06/KaZGOsWD2chNf3i.png" /></a></p>
+<p>此时已经有两个元素排好序了，同样的，我们继续将剩余元素看做一个完全二叉树，继续对根结点进行堆化操作，使得其继续满足大顶堆性质：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/PD7FBrlqc1R8LWE.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906223110734" src="https://s2.loli.net/2022/09/06/PD7FBrlqc1R8LWE.png" /></a></p>
+<p>第三轮同样的思路，将最大的交换到后面去：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/tKhYbOqv6Ezmc8R.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906223326135" src="https://s2.loli.net/2022/09/06/tKhYbOqv6Ezmc8R.png" /></a></p>
+<p>通过N轮排序，最后每一个元素都可以排到对应的位置上了，根据上面的思路，我们来尝试编写一下代码：</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1">//这个函数就是对start顶点位置的子树进行堆化</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">makeHeap</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">start</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="c1">//如果有子树，就一直往下，因为调整之后有可能子树又不满足性质了</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">child</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//因为下标是从0开始，所以左孩子下标就是i * 2 + 1，右孩子下标就是i * 2 + 2</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">child</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">child</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">child</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">])</span><span class="w">   </span><span class="c1">//如果存在右孩子且右孩子比左孩子大</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">            </span><span class="n">child</span><span class="o">++</span><span class="p">;</span><span class="w">    </span><span class="c1">//那就直接看右孩子</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">child</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">start</span><span class="p">])</span><span class="w">   </span><span class="c1">//如果上面选出来的孩子，比父结点大，那么就需要交换，大的换上去，小的换下来</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">            </span><span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">child</span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">start</span><span class="p">]);</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">        </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">child</span><span class="p">;</span><span class="w">   </span><span class="c1">//继续按照同样的方式前往孩子结点进行调整</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="p">}</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="kt">void</span><span class="w"> </span><span class="nf">heapSort</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="w">   </span><span class="c1">//我们首选需要对所有非叶子结点进行一次堆化操作，需要从最后一个到第一个，这里size/2计算的位置刚好是最后一个非叶子结点</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">        </span><span class="n">makeHeap</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">   </span><span class="c1">//接着我们需要一个一个把堆顶元素搬到后面，有序排列</span>
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">        </span><span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span><span class="w">    </span><span class="c1">//搬运实际上就是直接跟倒数第i个元素交换，这样，每次都能从堆顶取一个最大的过来</span>
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">        </span><span class="n">makeHeap</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">   </span><span class="c1">//每次搬运完成后，因为堆底元素被换到堆顶了，所以需要再次对根结点重新进行堆化</span>
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>最后我们来分析一下堆排序的稳定性，实际上堆排序本身也是在进行选择，每次都会选择堆顶元素放到后面，只不过堆是一直在动态维护的。实际上从堆顶取出元素时，都会与下面的叶子进行交换，有可能会出现：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/oVT4rvRsKnHyqQl.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906223706019" src="https://s2.loli.net/2022/09/06/oVT4rvRsKnHyqQl.png" /></a></p>
+<p>所以说堆排序是<strong>不稳定的</strong>排序算法。</p>
+<p>最后我们还是来总结一下上面的三种排序算法的相关性质：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">排序算法</th>
+<th style="text-align: center;">最好情况</th>
+<th style="text-align: center;">最坏情况</th>
+<th style="text-align: center;">空间复杂度</th>
+<th style="text-align: center;">稳定性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">快速排序</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(nlogn)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n^2)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(logn)\)</span></td>
+<td style="text-align: center;">不稳定</td>
+</tr>
+<tr>
+<td style="text-align: center;">希尔排序</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n^{1.3})\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n^2)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
+<td style="text-align: center;">不稳定</td>
+</tr>
+<tr>
+<td style="text-align: center;">堆排序</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(nlogn)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(nlogn)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
+<td style="text-align: center;">不稳定</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_10">其他排序方案<a class="headerlink" href="#_10" title="Permanent link">⚓︎</a></h2>
+<p>除了我们前面介绍的几种排序算法之外，还有一些其他类型的排序算法，我们都来认识一下吧。</p>
+<h3 id="_11">归并排序<a class="headerlink" href="#_11" title="Permanent link">⚓︎</a></h3>
+<p>归并排序利用递归分治的思想，将原本的数组进行划分，然后首先对划分出来的小数组进行排序，然后最后在合并为一个有序的大数组，还是很好理解的：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/06/PuBRFqHKDvxIpwZ.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220906232451040" src="https://s2.loli.net/2022/09/06/PuBRFqHKDvxIpwZ.png" /></a></p>
+<p>我们以下面的数组为例：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/05/GLEjym78BWNUtCf.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220905223505975" src="https://s2.loli.net/2022/09/05/GLEjym78BWNUtCf.png" /></a></p>
+<p>在一开始我们先不急着进行排序，我们先一半一半地进行划分：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/07/oi74M9zRdktHNjC.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220907135544173" src="https://s2.loli.net/2022/09/07/oi74M9zRdktHNjC.png" /></a></p>
+<p>继续进行划分：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/07/yFe9d7XDrqH8MWJ.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220907135744253" src="https://s2.loli.net/2022/09/07/yFe9d7XDrqH8MWJ.png" /></a></p>
+<p>最后会变成这样的一个一个的元素：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/07/ZdV5RWpAjQzeHn1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220907135927289" src="https://s2.loli.net/2022/09/07/ZdV5RWpAjQzeHn1.png" /></a></p>
+<p>此时我们就可以开始归并排序了，注意这里的合并并不是简简单单地合并，我们需要按照从小到大的顺序，依次对每个元素进行合并，第一组树4和2，此时我们需要从这两个数组中先选择小的排到前面去:</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/07/Is1lUMzTaSdk7bB.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220907140219455" src="https://s2.loli.net/2022/09/07/Is1lUMzTaSdk7bB.png" /></a></p>
+<p>排序完成后，我们继续向上合并：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/07/eAsX37G2BKdNHZj.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220907141217008" src="https://s2.loli.net/2022/09/07/eAsX37G2BKdNHZj.png" /></a></p>
+<p>最后我们再将这两个数组合并到原有的规模：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/07/rq7lDhdvTQympUS.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220907141442229" src="https://s2.loli.net/2022/09/07/rq7lDhdvTQympUS.png" /></a></p>
+<p>最后就能得到一个有序的数组了。</p>
+<p>实际上这种排序算法效率也很高，只不过需要牺牲一个原数组大小的空间来对这些分解后的数据进行排序，代码如下：</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">merge</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tmp</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">leftEnd</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">rightEnd</span><span class="p">){</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rightEnd</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">   </span><span class="c1">//这里需要保存一下当前范围长度，后面使用</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">left</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">leftEnd</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">rightEnd</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">   </span><span class="c1">//如果两边都还有，那么就看哪边小，下一个就存哪一边的</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">left</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">right</span><span class="p">])</span><span class="w">   </span><span class="c1">//如果左边的小，那么就将左边的存到下一个位置（这里i是从left开始的）</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">            </span><span class="n">tmp</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">left</span><span class="o">++</span><span class="p">];</span><span class="w">   </span><span class="c1">//操作完后记得对i和left都进行自增</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">        </span><span class="k">else</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">            </span><span class="n">tmp</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">right</span><span class="o">++</span><span class="p">];</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">left</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">leftEnd</span><span class="p">)</span><span class="w">    </span><span class="c1">//如果右边看完了，只剩左边，直接把左边的存进去</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">        </span><span class="n">tmp</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">left</span><span class="o">++</span><span class="p">];</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">right</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">rightEnd</span><span class="p">)</span><span class="w">   </span><span class="c1">//同上</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">        </span><span class="n">tmp</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">right</span><span class="o">++</span><span class="p">];</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">size</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">rightEnd</span><span class="o">--</span><span class="p">)</span><span class="w">   </span><span class="c1">//全部存到暂存空间中之后，暂存空间中的内容都是有序的了，此时挨个搬回原数组中（注意只能搬运范围内的）</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">        </span><span class="n">arr</span><span class="p">[</span><span class="n">rightEnd</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span><span class="p">[</span><span class="n">rightEnd</span><span class="p">];</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="p">}</span>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="kt">void</span><span class="w"> </span><span class="nf">mergeSort</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tmp</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">end</span><span class="p">){</span><span class="w">   </span><span class="c1">//要进行归并排序需要提供数组和原数组大小的辅助空间</span>
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">start</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w">   </span><span class="c1">//依然是使用递归，所以说如果范围太小，就不用看了</span>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">start</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">   </span><span class="c1">//先找到中心位置，一会分两半</span>
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="w">    </span><span class="n">mergeSort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">tmp</span><span class="p">,</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="p">);</span><span class="w">   </span><span class="c1">//对左半和右半分别进行归并排序</span>
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="w">    </span><span class="n">mergeSort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">tmp</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">);</span>
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="w">    </span><span class="n">merge</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">tmp</span><span class="p">,</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">);</span><span class="w">  </span>
+</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="w">    </span><span class="c1">//上面完事之后，左边和右边都是有序状态了，此时再对整个范围进行一次归并排序即可</span>
+</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>因为归并排序最后也是按照小的优先进行合并，如果遇到相等的，也是优先将前面的丢回原数组，所以说排在前面的还是排在前面，因此归并排序也是<strong>稳定的</strong>排序算法。</p>
+<h3 id="_12">桶排序和基数排序<a class="headerlink" href="#_12" title="Permanent link">⚓︎</a></h3>
+<p>在开始讲解桶排序之前，我们先来看看计数排序，它要求是数组长度为N，且数组内的元素取值范围是0 - M-1 之间（M小于等于N）</p>
+<p>算法演示网站：https://visualgo.net/zh/sorting?slide=1</p>
+<p>比如下面的数组，所有的元素范围是 1-6之间：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/07/5H29S1YpwUXh63L.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220907142933725" src="https://s2.loli.net/2022/09/07/5H29S1YpwUXh63L.png" /></a></p>
+<p>我们先对其进行一次遍历，统计每个元素的出现次数，统计完成之后，我们就能够明确在排序之后哪个位置可以存放值为多少的元素了：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/07/dBvf8LYJnl47HmN.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220907145336855" src="https://s2.loli.net/2022/09/07/dBvf8LYJnl47HmN.png" /></a></p>
+<p>我们来分析一下，首先1只有一个，那么只会占用一个位置，2也只有一个，所以说也只会占用一个位置，以此类推：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/07/FXOMDrohvgNECLj.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220907145437992" src="https://s2.loli.net/2022/09/07/FXOMDrohvgNECLj.png" /></a></p>
+<p>所以说我们直接根据统计的结果，把这些值挨个填进去就行了，而且还是稳定的，按顺序，有几个填几个就可以了：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/07/R4rPLtDVxYZcvEI.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220907145649061" src="https://s2.loli.net/2022/09/07/R4rPLtDVxYZcvEI.png" /></a></p>
+<p>是不是感觉很简单，而且只需要遍历一次进行统计就行了。</p>
+<p>当然肯定是有缺点的：</p>
+<ol>
+<li>当数组中最大最小值差距过大时，我们得申请更多的空间来进行计数，所以不适用于计数排序。</li>
+<li>当数组中元素值不是离散的（也就是不是整数的情况下）就没办法统计了。</li>
+</ol>
+<p>我们接着来看桶排序，它是计数排序的延伸，思路也比较简单，它同样要求是数组长度为N，且数组内的元素取值范围是0 - M-1 之间（M小于等于N），比如现在有1000个学生，现在需要对这些学生按照成绩进行排序，因为成绩的范围是0-100，所以说我们可以建立101个桶来分类存放。</p>
+<p>比如下面的数组：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/07/5H29S1YpwUXh63L.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220907142933725" src="https://s2.loli.net/2022/09/07/5H29S1YpwUXh63L.png" /></a></p>
+<p>此数组中包含1-6的元素，所以说我们可以建立 6个桶来进行统计：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/07/ImGw7Z6xhBnLAWr.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220907143715938" src="https://s2.loli.net/2022/09/07/ImGw7Z6xhBnLAWr.png" /></a></p>
+<p>这样，我们只需要遍历一次，就可以将所有的元素分类丢到这些桶中，最后我们只需要依次遍历这些桶，然后把里面的元素拿出来依次存放回去得到的就是有序的数组了：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/07/d4ZMjNS8UmaCRef.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220907144255326" src="https://s2.loli.net/2022/09/07/d4ZMjNS8UmaCRef.png" /></a></p>
+<p>只不过桶排序虽然也很快，但是同样具有与上面计数排序一样的限制，我们可以将每个桶接纳一定范围内的元素，来减小桶的数量，但是这样会导致额外的时间开销。</p>
+<p>我们最后来看看基数排序，基数排序依然是一种依靠统计来进行的排序算法，但是它不会因为范围太大而导致无限制地申请辅助空间。它的思路是，分出10个基数出来（从0 - 9）我们依然是只需要遍历一次，我们根据每一个元素的个位上的数字，进行分类，因为现在有10个基数，也就是10个桶。个位完事之后再看十位、百位...</p>
+<p>算法演示网站：https://visualgo.net/zh/sorting</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/07/c2qtbQJOW7mS6Hr.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220907152403435" src="https://s2.loli.net/2022/09/07/c2qtbQJOW7mS6Hr.png" /></a></p>
+<p>先按照个位数进行统计，然后排序，再按照十位进行统计，然后排序，最后得到的结果就是最终的结果了：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/07/WJjtbBMKIVYUlNs.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220907152903020" src="https://s2.loli.net/2022/09/07/WJjtbBMKIVYUlNs.png" /></a></p>
+<p>然后是十位数：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/07/mI4yjLhXSP17cFq.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220907153005797" src="https://s2.loli.net/2022/09/07/mI4yjLhXSP17cFq.png" /></a></p>
+<p>最后再次按顺序取出来：
+<a class="glightbox" href="https://s2.loli.net/2022/09/07/2njAIfvDQbLxNyt.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220907153139536" src="https://s2.loli.net/2022/09/07/2njAIfvDQbLxNyt.png" /></a></p>
+<p>成功得到有序数组。</p>
+<p>最后我们来总结一下所有排序算法的相关性质：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">排序算法</th>
+<th style="text-align: center;">最好情况</th>
+<th style="text-align: center;">最坏情况</th>
+<th style="text-align: center;">空间复杂度</th>
+<th style="text-align: center;">稳定性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">冒泡排序</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n^2)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
+<td style="text-align: center;">稳定</td>
+</tr>
+<tr>
+<td style="text-align: center;">插入排序</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n^2)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
+<td style="text-align: center;">稳定</td>
+</tr>
+<tr>
+<td style="text-align: center;">选择排序</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n^2)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n^2)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
+<td style="text-align: center;">不稳定</td>
+</tr>
+<tr>
+<td style="text-align: center;">快速排序</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(nlogn)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n^2)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(logn)\)</span></td>
+<td style="text-align: center;">不稳定</td>
+</tr>
+<tr>
+<td style="text-align: center;">希尔排序</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n^{1.3})\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n^2)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
+<td style="text-align: center;">不稳定</td>
+</tr>
+<tr>
+<td style="text-align: center;">堆排序</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(nlogn)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(nlogn)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
+<td style="text-align: center;">不稳定</td>
+</tr>
+<tr>
+<td style="text-align: center;">归并排序</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(nlogn)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(nlogn)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
+<td style="text-align: center;">稳定</td>
+</tr>
+<tr>
+<td style="text-align: center;">计数排序</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n + k)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n + k)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(k)\)</span></td>
+<td style="text-align: center;">稳定</td>
+</tr>
+<tr>
+<td style="text-align: center;">桶排序</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n + k)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n^2)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(k + n)\)</span></td>
+<td style="text-align: center;">稳定</td>
+</tr>
+<tr>
+<td style="text-align: center;">基数排序</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n \times k)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n \times k)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(k+n)\)</span></td>
+<td style="text-align: center;">稳定</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_13">猴子排序<a class="headerlink" href="#_13" title="Permanent link">⚓︎</a></h3>
+<p>猴子排序比较佛系，因为什么时候能排完，全看运气！</p>
+<blockquote>
+<p>无限猴子定理最早是由埃米尔·博雷尔在1909年出版的一本谈概率的书籍中提到的，此书中介绍了“打字的猴子”的概念。无限猴子定理是概率论中的柯尔莫哥洛夫的零一律的其中一个命题的例子。大概意思是，如果让一只猴子在打字机上随机地进行按键，如果一直不停的这样按下去，只要时间达到无穷时，这只猴子就几乎必然可以打出任何给定的文字，甚至是莎士比亚的全套著作也可以打出来。</p>
+</blockquote>
+<p>假如现在有一个长度为N的数组：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/07/oeEcWx91qHp2iXa.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220907154254943" src="https://s2.loli.net/2022/09/07/oeEcWx91qHp2iXa.png" /></a></p>
+<p>我们每次都随机从数组中挑一个元素，与随机的一个元素进行交换：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/07/PQKGfMTH4xCUNgt.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220907154428792" src="https://s2.loli.net/2022/09/07/PQKGfMTH4xCUNgt.png" /></a></p>
+<p>只要运气足够好，那么说不定几次就可以搞定，要是运气不好，说不定等到你孙子都结婚了都还没排好。</p>
+<p>代码如下：</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kt">_Bool</span><span class="w"> </span><span class="nf">checkOrder</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">){</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="p">}</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">},</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span><span class="p">()</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span><span class="p">()</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">size</span><span class="p">;</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">        </span><span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">a</span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">b</span><span class="p">]);</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">checkOrder</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">))</span><span class="w"> </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">        </span><span class="n">counter</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;在第 %d 次排序完成！&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">counter</span><span class="p">);</span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>可以看到在10个元素的情况下，这边第7485618次排序成功了：</p>
+<p><a class="glightbox" href="https://s2.loli.net/2022/09/07/NposWDHJIxuVztO.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-20220907160219493" src="https://s2.loli.net/2022/09/07/NposWDHJIxuVztO.png" /></a></p>
+<p>但是不知道为什么每次排序出来的结果都是一样的，可能是随机数取得还不够随机吧。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">排序算法</th>
+<th style="text-align: center;">最好情况</th>
+<th style="text-align: center;">最坏情况</th>
+<th style="text-align: center;">空间复杂度</th>
+<th style="text-align: center;">稳定性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">猴子排序</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
+<td style="text-align: center;">∞</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
+<td style="text-align: center;">不稳定</td>
+</tr>
+</tbody>
+</table>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-11-27T14:22:38+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-11-27</span>
+      
+        <br>
+        创建日期:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-11-07T18:33:42+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-11-07</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 - 2023 Ronald Luo
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "toc.follow", "navigation.top", "search.suggest", "navigation.footer", "navigation.tracking", "navigation.instant", "navigation.instant.progress", "content.code.copy", "search.suggest", "search.highlight", "search.share"], "search": "../javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="../../js/timeago.min.js"></script>
+      
+        <script src="../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
