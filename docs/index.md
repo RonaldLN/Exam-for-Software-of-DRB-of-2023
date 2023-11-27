@@ -7,7 +7,7 @@
 
 这是原本的Python考核任务内容
 
->   <a href="https://gitee.com/ronald-luo/exam_for_software_of_drb_of_2023/raw/gh-pages/assets/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%80%83%E6%A0%B8Python.zip" download="第二次考核Python.zip">第二次考核Python.zip</a>
+>   <a href="https://gitee.com/ronald-luo/exam_for_software_of_drb_of_2023/blob/master/docs/assets/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%80%83%E6%A0%B8Python.zip" download="第二次考核Python.zip">第二次考核Python.zip</a>
 
 大家如果想查看可以下载查看，想进行尝试的话也可以(想提交给我也行)
 
@@ -15,7 +15,7 @@
 
 ## 任务一（5分）
 
-下载 <a href="https://gitee.com/ronald-luo/exam_for_software_of_drb_of_2023/raw/gh-pages/assets/lab01.zip" download="lab01.zip">`『lab01.zip』`</a>，将压缩包中的 `lab01` 文件夹解压后，用 :simple-powershell: **PowerShell** 或者 **命令提示符cmd** 打开 `lab01` 文件夹，如图
+下载 <a href="https://gitee.com/ronald-luo/exam_for_software_of_drb_of_2023/blob/master/docs/assets/lab01.zip" download="lab01.zip">`『lab01.zip』`</a>，将压缩包中的 `lab01` 文件夹解压后，用 :simple-powershell: **PowerShell** 或者 **命令提示符cmd** 打开 `lab01` 文件夹，如图
 
 ![无标题7](assets/无标题7.png)
 
@@ -35,15 +35,15 @@ python ok --local
 
 自己学习 python 语言相关的语法，根据下面这个网站的指示，完成上面的测试题
 
- [Lab 1](assets\Lab 1_ Variables & Functions, Control _ CS 61A Fall 2020.mhtml) （如果点击这个链接出现下载选项，则将 `.mhtml` 文件下载后用浏览器打开）
+ [Lab 1](https://gitee.com/ronald-luo/exam_for_software_of_drb_of_2023/blob/master/docs/assets/Lab%201_%20Variables%20&%20Functions,%20Control%20_%20CS%2061A%20Fall%202020.mhtml) （将 `.mhtml` 文件下载后用浏览器打开）
 
 ## 任务二（5分）
 
 与**任务一**类似，
 
-测试题文件： <a href="https://gitee.com/ronald-luo/exam_for_software_of_drb_of_2023/raw/gh-pages/assets/lab02.zip" download="lab02.zip">`『lab02.zip』`</a>
+测试题文件： <a href="https://gitee.com/ronald-luo/exam_for_software_of_drb_of_2023/blob/master/docs/assets/lab02.zip" download="lab02.zip">`『lab02.zip』`</a>
 
-指示网站：  [Lab 2](assets\Lab 2_ Higher-Order Functions, Lambda Expressions _ CS 61A Fall 2020.mhtml) 
+指示网站：  [Lab 2](https://gitee.com/ronald-luo/exam_for_software_of_drb_of_2023/blob/master/docs/assets/Lab%202_%20Higher-Order%20Functions,%20Lambda%20Expressions%20_%20CS%2061A%20Fall%202020.mhtml) 
 
 同样地，如果完成任务，请将通过测试的界面截图并保存
 
