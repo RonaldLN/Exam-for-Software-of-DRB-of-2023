@@ -35,7 +35,7 @@ python ok --local
 
 自己学习 python 语言相关的语法，根据下面这个网站的指示，完成上面的测试题
 
- [Lab 1](https://gitee.com/ronald-luo/exam_for_software_of_drb_of_2023/blob/master/docs/assets/Lab%201_%20Variables%20&%20Functions,%20Control%20_%20CS%2061A%20Fall%202020.mhtml) （将 `.mhtml` 文件下载后用浏览器打开）
+ [Lab 1](assets/Lab 1_ Variables & Functions, Control _ CS 61A Fall 2020.html)
 
 ## 任务二（5分）
 
@@ -43,7 +43,7 @@ python ok --local
 
 测试题文件： <a href="https://gitee.com/ronald-luo/exam_for_software_of_drb_of_2023/blob/master/docs/assets/lab02.zip" download="lab02.zip">`『lab02.zip』`</a>
 
-指示网站：  [Lab 2](https://gitee.com/ronald-luo/exam_for_software_of_drb_of_2023/blob/master/docs/assets/Lab%202_%20Higher-Order%20Functions,%20Lambda%20Expressions%20_%20CS%2061A%20Fall%202020.mhtml) 
+指示网站：  [Lab 2](assets/Lab%202_%20Higher-Order%20Functions,%20Lambda%20Expressions%20_%20CS%2061A%20Fall%202020.html) 
 
 同样地，如果完成任务，请将通过测试的界面截图并保存
 
