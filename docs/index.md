@@ -100,7 +100,7 @@ python ok --local
 
     求 $\int f(x)dx$ 
 
-请将计算的运行结果截图，类似下图（求 $\int \frac{xe^x}{(e^x + 1)^2}dx$ ）
+请将计算的运行结果截图，类似下图（求 $\int \cos{x}dx$ ）
 
 ![无标题9](assets/无标题9.png)
 
