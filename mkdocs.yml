@@ -89,7 +89,8 @@ extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
 
 nav:
-  - Python相关: index.md
+  - Ubuntu & ROS相关: index.md
+  - Python相关: 第二次考核.md
   - C++相关: 第一次考核.md
 
 plugins:
